@@ -1,0 +1,6 @@
+logging
+pandas
+flask
+werkzeug
+numpy
+sklearn
