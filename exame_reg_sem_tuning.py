@@ -40,6 +40,7 @@ rmse = np.sqrt(mse)
 print('KNN Regressor')
 print(r2)
 print(mae, mse, rmse)
+print(f'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA {np.mean(Y_pred-Y_test)}')
 
 
 #####################
