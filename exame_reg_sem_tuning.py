@@ -1,3 +1,4 @@
+import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -81,5 +82,4 @@ rmse = np.sqrt(mse)
 print('random forest')
 print(r2)
 print(mae, mse, rmse)
-
 

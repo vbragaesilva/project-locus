@@ -16,10 +16,10 @@
                 <div class="text-center mb-5">
                     <h1 class="display-4 mb-3">
                         <i class="fas fa-home me-3"></i>
-                        Airbnb Price Calculator
+                        Projeto Locus
                     </h1>
                     <p class="lead text-muted">
-                        Upload your Airbnb dataset and get accurate price predictions for your property
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quos doloremque ad ratione dolore voluptate nobis cumque sint, laudantium assumenda maxime quisquam animi, quidem, eveniet amet omnis nam exercitationem officiis?
                     </p>
                 </div>
 
@@ -50,18 +50,6 @@
                     </div>
                     <div class="card-body">
                         <form method="POST" enctype="multipart/form-data" id="priceCalculatorForm">
-                            <!-- File Upload Section -->
-                            <div class="mb-4">
-                                <label for="datafile" class="form-label">
-                                    <i class="fas fa-upload me-2"></i>
-                                    Upload Your Airbnb Dataset (CSV)
-                                </label>
-                                <input type="file" class="form-control" id="datafile" name="datafile" accept=".csv" required>
-                                <div class="form-text">
-                                    Please upload a CSV file containing your Airbnb property data for training the prediction model.
-                                </div>
-                            </div>
-
                             <hr class="my-4">
 
                             <!-- Property Details Section -->
@@ -72,13 +60,42 @@
                             
                             <div class="row">
                                 <!-- Basic Property Info -->
+                                
+                                <h6 class="mb-3 mt-4">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Escolha o Bairro
+                                </h6>
+                                <div class="mb-3">
+                                    <label for="neighbourhood" class="form-label">
+                                        <i class="fas fa-city me-2"></i>
+                                        Bairro
+                                    </label>
+                                    <select class="form-select" id="neighbourhood" name="neighbourhood" valeu="Copacabana" required>
+                                        <option value="" disabled selected>Selecione um bairro</option>
+                                        <option value="Copacabana">Copacabana</option>
+                                        <option value="Barra da Tijuca">Barra da Tijuca</option>
+                                        <option value="Ipanema">Ipanema</option>
+                                        <option value="Recreio dos Bandeirantes">Recreio dos Bandeirantes</option>
+                                    </select>
+                                </div>  
+                                <div class="mb-3">
+                                    <label for="room_type" class="form-label">
+                                        <i class="fas fa-bed me-2"></i>
+                                        Tipo de Local
+                                    </label>
+                                    <select class="form-select" id="room_type" name="room_type" value="Entire home/apt" required>
+                                        <option value="" disabled selected>Selecione o tipo</option>
+                                        <option value="Entire home/apt">Apartamento inteiro</option>
+                                        <option value="Private room">Quarto privado</option>
+                                    </select>
+                                </div>                                
                                 <div class="col-md-6 mb-3">
                                     <label for="accommodates" class="form-label">Maximum Number of People</label>
                                     <input type="number" class="form-control" id="accommodates" name="accommodates" min="1" max="20" value="4" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="bathrooms" class="form-label">Number of Bathrooms</label>
-                                    <input type="number" class="form-control" id="bathrooms" name="bathrooms" min="0" max="10" step="0.5" value="1" required>
+                                    <input type="number" class="form-control" id="bathrooms" name="bathrooms" min="0" max="10" step="1" value="1" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="bedrooms" class="form-label">Number of Bedrooms</label>
@@ -86,7 +103,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="beds" class="form-label">Number of Beds</label>
-                                    <input type="number" class="form-control" id="beds" name="beds" min="0" max="20" value="1" required>
+                                    <input type="number" class="form-control" id="beds" name="beds" min="0" max="20" value="2" required>
                                 </div>
                             </div>
 
@@ -98,7 +115,7 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="minimum_nights" class="form-label">Minimum Nights</label>
-                                    <input type="number" class="form-control" id="minimum_nights" name="minimum_nights" min="1" max="365" value="1" required>
+                                    <input type="number" class="form-control" id="minimum_nights" name="minimum_nights" min="1" max="365" value="2" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="maximum_nights" class="form-label">Maximum Nights</label>
@@ -106,7 +123,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="availability_365" class="form-label">Availability Throughout Year (days)</label>
-                                    <input type="number" class="form-control" id="availability_365" name="availability_365" min="0" max="365" value="365" required>
+                                    <input type="number" class="form-control" id="availability_365" name="availability_365" min="0" max="365" value="320" required>
                                 </div>
                             </div>
 
@@ -131,11 +148,11 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="number_of_reviews" class="form-label">Number of Reviews</label>
-                                    <input type="number" class="form-control" id="number_of_reviews" name="number_of_reviews" min="0" max="1000" value="0" required>
+                                    <input type="number" class="form-control" id="number_of_reviews" name="number_of_reviews" min="0" max="1000" value="13" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="reviews_per_month" class="form-label">Reviews Per Month</label>
-                                    <input type="number" class="form-control" id="reviews_per_month" name="reviews_per_month" min="0" max="50" step="0.1" value="0" required>
+                                    <input type="number" class="form-control" id="reviews_per_month" name="reviews_per_month" min="0" max="50" step="0.1" value="3" required>
                                 </div>
                             </div>
 
@@ -147,31 +164,31 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_rating" class="form-label">Overall Rating</label>
-                                    <input type="number" class="form-control" id="review_scores_rating" name="review_scores_rating" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_rating" name="review_scores_rating" min="0" max="5" step="0.1" value="4.5" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_accuracy" class="form-label">Accuracy</label>
-                                    <input type="number" class="form-control" id="review_scores_accuracy" name="review_scores_accuracy" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_accuracy" name="review_scores_accuracy" min="0" step="0.1" max="5" value="4.3" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_cleanliness" class="form-label">Cleanliness</label>
-                                    <input type="number" class="form-control" id="review_scores_cleanliness" name="review_scores_cleanliness" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_cleanliness" name="review_scores_cleanliness" min="0" step="0.1" max="5" value="4.9" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_checkin" class="form-label">Check-in</label>
-                                    <input type="number" class="form-control" id="review_scores_checkin" name="review_scores_checkin" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_checkin" name="review_scores_checkin" min="0" max="5" step="0.1" value="4.1" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_communication" class="form-label">Communication</label>
-                                    <input type="number" class="form-control" id="review_scores_communication" name="review_scores_communication" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_communication" name="review_scores_communication" min="0" max="5" step="0.1" value="4.2" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_location" class="form-label">Location</label>
-                                    <input type="number" class="form-control" id="review_scores_location" name="review_scores_location" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_location" name="review_scores_location" min="0" max="5" step="0.1" value="4.9" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="review_scores_value" class="form-label">Value</label>
-                                    <input type="number" class="form-control" id="review_scores_value" name="review_scores_value" min="0" max="100" value="95" required>
+                                    <input type="number" class="form-control" id="review_scores_value" name="review_scores_value" min="0" max="5" step="0.1" value="4.3" required>
                                 </div>
                             </div>
 
@@ -179,7 +196,7 @@
                             <div class="text-center mt-4">
                                 <button type="submit" class="btn btn-primary btn-lg px-5" id="estimateBtn">
                                     <i class="fas fa-calculator me-2"></i>
-                                    <span class="btn-text">Estimate Price</span>
+                                    <span class="btn-text">ESTIME O PRECO</span>
                                     <span class="btn-loading d-none">
                                         <i class="fas fa-spinner fa-spin me-2"></i>
                                         Processing...
@@ -190,7 +207,7 @@
                     </div>
                 </div>
 
-                <!-- Results Section -->
+                <!-- PRECO RESULTANTE -->
                 {% if predicted_price %}
                 <div class="card shadow-lg mt-4">
                     <div class="card-header bg-success text-white">
@@ -200,9 +217,9 @@
                         </h4>
                     </div>
                     <div class="card-body text-center">
-                        <div class="display-3 text-success mb-3">
-                            ${{ "%.2f"|format(predicted_price) }}
-                        </div>
+                    <div class="display-3 text-success mb-3">
+                        {{ predicted_price }}
+                    </div>
                         <p class="lead text-muted">
                             Estimated nightly price for your Airbnb property
                         </p>
@@ -214,27 +231,22 @@
                 </div>
                 {% endif %}
 
-                <!-- Instructions -->
+            
+                <!-- MANUAL DO USUÁRIO -->
                 <div class="card mt-4">
                     <div class="card-header">
                         <h5 class="card-title mb-0">
                             <i class="fas fa-question-circle me-2"></i>
-                            How to Use This Calculator
+                            MANUAL DE COMO USAR
                         </h5>
                     </div>
                     <div class="card-body">
                         <ol class="mb-0">
                             <li class="mb-2">
-                                <strong>Upload your dataset:</strong> Upload a CSV file containing historical Airbnb property data with columns like price, accommodates, bathrooms, bedrooms, etc.
+                                <strong>BLABLA...</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rerum, fugiat velit omnis adipisci assumenda obcaecati. Necessitatibus impedit esse doloremque! Corporis repellat vel ducimus saepe suscipit, voluptatum quidem odit ea!
                             </li>
                             <li class="mb-2">
-                                <strong>Fill in property details:</strong> Enter the specific characteristics of the property you want to price.
-                            </li>
-                            <li class="mb-2">
-                                <strong>Set review scores:</strong> Input the review scores for different aspects of the property (0-100 scale).
-                            </li>
-                            <li class="mb-0">
-                                <strong>Get your estimate:</strong> Click "Estimate Price" to receive a data-driven price prediction.
+                                <strong>BLABLA...</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatibus sapiente labore quam sint deleniti veniam magni, incidunt quidem perferendis vero tempore fuga eaque. Dolores repudiandae molestiae ut accusamus necessitatibus!
                             </li>
                         </ol>
                     </div>

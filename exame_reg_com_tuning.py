@@ -7,20 +7,20 @@ from sklearn.preprocessing import StandardScaler
 from exame_ler import df_clean
 
 
-# Separando
 X = df_clean.drop('price_float', axis=1)
 Y = df_clean['price_float']
 
-# NORMALIZACAO
+# Normalizando os dados
 min_max_scaler = StandardScaler()
 X = min_max_scaler.fit_transform(X)
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=26)
 
 
-#####################
-# 1) KNN REGRESSOR
-#####################
+''' 
+KNN REGRESSOR 
+'''
+
 
 from sklearn.neighbors import KNeighborsRegressor
 import time
@@ -64,10 +64,9 @@ print(mae, mse, rmse)
 print("-"*50)
 
 
-#####################
-# 3) Support Vector Machines
-#####################
-
+'''
+Support Vector Machines
+'''
 from sklearn.svm import SVR
 # SVM
 # Definição dos hiperparâmetros do SVR:
@@ -101,10 +100,9 @@ print(mae, mse, rmse)
 print("-"*50)
 
 
-#####################
-# 5) Random Forest
-#####################
-
+'''
+Random Forest
+'''
 from sklearn.ensemble import RandomForestRegressor
 # Random Forest
 # Definição dos hiperparâmetros do Random Forest:
