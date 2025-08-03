@@ -4,12 +4,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from sklearn.preprocessing import StandardScaler
 
-from exame_ler import df_clean
+from exame_ler import final_df
 
 
 # Separando
-X = df_clean.drop('price_float', axis=1)
-Y = df_clean['price_float']
+X = final_df.drop('price_float', axis=1)
+Y = final_df['price_float']
 
 # NORMALIZACAO
 min_max_scaler = StandardScaler()
